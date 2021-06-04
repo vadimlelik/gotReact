@@ -1,0 +1,12 @@
+.toggle-btn{
+    padding: 15px 10px;
+    background-color: #2E4053;
+    border-radius: 20px;
+    color: #fff;
+    border: 1px solid #979A9A;
+    margin-bottom: 20px;
+    outline: none;
+}
+#root{
+    min-height: 100vh;
+}
