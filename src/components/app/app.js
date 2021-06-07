@@ -6,15 +6,12 @@ import ErrorMessage from '../error';
 import CharacterPage from '../characterPage';
 
 import './app.css';
-import ItemList from '../itemList';
-import CharDetails from '../charDetails';
 
 
 export default class App extends Component {
     state = {
         showRandomChar: true,
         error: false,
-        selectedChar:null,
         
     }
     toggleRandomChar = () => {
@@ -24,11 +21,12 @@ export default class App extends Component {
             }
         });
     }
-    onCharSelected=(i)=>{
+    componentDidCatch() {
         this.setState({
-            selectedChar:i
+            error: true
         })
     }
+
 
     render() {
         if (this.state.error) {
@@ -49,18 +47,8 @@ export default class App extends Component {
                                 onClick={this.toggleRandomChar}>Toggle random character</button>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col md='6'>
-                            <ItemList
-                            onCharSelected={this.onCharSelected}
-                            />
-                        </Col>
-                        <Col md='6'>
-                            <CharDetails
-                            charId = {this.state.selectedChar}
-                            />
-                        </Col>
-                    </Row>
+                    <CharacterPage/>
+
                 </Container>
             </>
         );

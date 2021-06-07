@@ -31,13 +31,18 @@ export default class CharacterPage extends Component {
 
         return (
             <Row>
-                <Col md='6'>
-                    <ItemList onCharSelected={this.onCharSelected}/>
-                </Col>
-                <Col md='6'>
-                    <CharDetails charId = {this.state.selectedChar} />
-                </Col>
-            </Row>
+            <Col md='6'>
+                <ItemList
+                onCharSelected={this.onCharSelected}
+                />
+            </Col>
+            <Col md='6'>
+                <CharDetails
+                charId = {this.state.selectedChar}
+                />
+            </Col>
+        </Row>
+            
         )
     }
 }
