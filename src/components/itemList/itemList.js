@@ -17,7 +17,7 @@ export default class ItemList extends Component {
 
 
 
-    onCharSelected = (id)=>{
+    onItemSelected = (id)=>{
         this.setState({
             selectedChar:id
         })
@@ -48,15 +48,15 @@ export default class ItemList extends Component {
             error: true
         })
     }
-    renderItems(arr) {
+    renderItem(arr) {
         return arr.map((item) => {
             const {id} = item
-            const {label} =  this.props.renderItem(item)
+            const label =  this.props.renderItem(item)
             return (
                 <li
                     key={id}
                     className="list-group-item"
-                    onClick={() => this.props.onCharSelected(id)}
+                    onClick={() => this.props.onItemSelected(id)}
                     >
                     {label}
                 </li>
@@ -76,7 +76,7 @@ export default class ItemList extends Component {
             return <Spinner/>
         }
 
-        const items = this.renderItems(itemList);
+        const items = this.renderItem(itemList);
 
         return (
             <ul className="item-list list-group">
