@@ -7,7 +7,7 @@ import gotService from "../../services/gotService";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./app.css";
-import { BooksPage,CharacterPage,HousesPage } from "../pages";
+import { BooksPage,CharacterPage,HousesPage, BooksItem } from "../pages";
 
 export default class App extends Component {
   gotService = new gotService();
@@ -52,6 +52,13 @@ export default class App extends Component {
             <Route path='/characters'component={CharacterPage}/>
             <Route path='/housePage'  component={HousesPage}/>
             <Route path='/books' exact component={BooksPage}/>
+            <Route path='/books/:id'  render={
+              ({match})=>{
+                const {id} = match.params
+              
+                return <BooksItem bookId={id}/> }
+              
+            } />
             
           </Container>
         </div>

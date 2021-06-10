@@ -37,13 +37,13 @@ const Header = () => {
             </HeaderTitle>
             <HeaderLinks>
                 <li>
-                    <Link to='/characters' >Characters</Link>
+                    <Link to='/characters/' >Characters</Link>
                 </li>
                 <li>
-                    <Link to='/housePage'>Houses</Link>
+                    <Link to='/housePage/'>Houses</Link>
                 </li>
                 <li>
-                    <Link to='/books'>Books</Link>   
+                    <Link to='/books/'>Books</Link>   
                 </li>
             </HeaderLinks>
         </HeaderBlock>
